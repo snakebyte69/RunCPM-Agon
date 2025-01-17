@@ -17,6 +17,9 @@
 #if defined _STM32_DEF_
 #define HostOS 0x06
 #endif
+#if defined AGON_LIGHT
+#define HostOS 0x07
+#endif
 
 /* Memory abstraction functions */
 /*===============================================================================*/

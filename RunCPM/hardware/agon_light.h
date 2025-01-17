@@ -31,4 +31,19 @@ void setupAgonLight() {
     Serial.println("SD card initialized.");
 }
 
+void MOS_send(uint8* message) {
+    Serial.write(message);
+}
+
+uint8 MOS_receive() {
+    while (!Serial.available());
+    return Serial.read();
+}
+
+void MOS_communicate(uint8* message) {
+    MOS_send(message);
+    uint8 response = MOS_receive();
+    Serial.write(response);
+}
+
 #endif
